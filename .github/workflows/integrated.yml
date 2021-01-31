@@ -1,0 +1,26 @@
+name: Scraping script
+
+on:
+  schedule:
+    - cron: "0 5 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [15.x]
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Scraping process
+        run: |
+          npm ci || true
+          node scrappers.js || true
+        env:
+          CI: true
