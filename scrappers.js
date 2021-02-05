@@ -65,10 +65,10 @@ async function scraperForRozaje(url){
                       "Datum": dateOfPublishing.toString().trim(), 
                       "Grad": currentData[0], 
                       "Aktivni": currentData[1], 
-                      "Oporavljeni": currentData[2],
-                      "Umrli": currentData[3]
+                      "Oporavljeni": 'Nepoznato',
+                      "Umrli": 'Nepoznato'
                     };
-
+ 
     insertTheDataToFirebase(objectData);
 
     } catch (err) { 
