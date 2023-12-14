@@ -3,7 +3,7 @@ const pluginStealth = require('puppeteer-extra-plugin-stealth');
 puppeteer.use(pluginStealth());
 const environment = require('./environment.js');
 
-async function scrappeDataRozaje(){
+async function scrapeDataRozaje(){
     (async () => {
       scraperForRozaje(await latestLink());  
     })();
