@@ -21,6 +21,6 @@ jobs:
       - name: Scraping process
         run: |
           npm ci || true
-          node scrappers.js || true
+          node scrape_data.js || true
         env:
           CI: true
